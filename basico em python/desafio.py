@@ -28,6 +28,25 @@ def tipo_de_leitor():
 tipo_de_leitor()
 
 '''
+DESAFIO 2
+
+Solicite uma string e substitua todas as vogais por . Exemplo: "Olá mundo" → "l* mnd".
+
+'''
+
+lista_de_vogais = ['a', 'e', 'i', 'o', 'u']
+
+def frase_sem_vogais():
+  frase_completa = str(input("Digite sua frase: "))
+  for vogal in lista_de_vogais:
+    frase_completa = frase_completa.replace(vogal, '.')
+  print(frase_completa)
+    
+
+frase_sem_vogais()
+
+
+'''
 DESAFIO 3
 
 O computador escolhe um número entre 1 e 50.
@@ -70,6 +89,7 @@ Sair
 
 # permita = usar input
 
+
 # (nome, calorias) = dicionário
 
 # Registrar refeições do dia = cada refeicao é um novo dicionario
@@ -77,6 +97,31 @@ Sair
 # total de calorias consumidas = soma dos values
 
 # historico alimentar = ver todas as keys
+
+def cardapio():
+  refeicao = {"Alimento": input("Qual alimento voce comeu? "), "Calorias" : float(input("Quantas calorias tem esse alimento? "))}
+  deseja_sair = bool(int(input("vc deseja sair [0 nao/1 sim]? ")))
+  while deseja_sair == False:
+    refeicao.update({"Alimento": input("Qual alimento voce comeu? "), "Calorias" : float(input("Quantas calorias tem esse alimento? "))})
+    deseja_sair = bool(input("vc deseja sair [0 nao/1 sim]?"))
+
+print(cardapio())
+
+
+
+def cardapio():
+  refeicao = {"Alimento": input("Qual alimento voce comeu? "), "Calorias": float(input("Quantas calorias tem esse alimento? "))}
+  deseja_sair = bool(int(input("vc deseja sair [0 nao/1 sim]? ")))
+  while deseja_sair == False:
+    refeicao["Alimento": input("Qual alimento voce comeu? ")] = "Calorias": float(input("Quantas calorias tem esse alimento? "))
+    deseja_sair = bool(int(input("vc deseja sair [0 nao/1 sim]? ")))
+  print(refeicao)
+  # ver_historico = bool(int(input("Deseja ver seu historico de refeicoes? [0 nao/1 sim]? ")))
+  # if ver_historico == True:
+  #   print(refeicao)
+  
+print(cardapio())
+
 
 '''
 DESAFIO 5

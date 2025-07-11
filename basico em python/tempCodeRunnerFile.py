@@ -1,12 +1,10 @@
-def consumo_do_carro():
-  distancia = int(input("Quantos km voce andou?"))
-  litros = int(input("Quantos litros de combustivel voce tinha?"))
-  consumo = distancia / litros
-  if consumo > 12:
-    print("Seu consumo foi eficiente!")
-  elif 12 >= consumo > 8:
-    print("Seu consumo foi mediano.")
-  else:
-    print("Seu consumo foi alto!")
 
-consumo_do_carro()
+def cardapio():
+  refeicao = {"Alimento": input("Qual alimento voce comeu? "), "Calorias" : float(input("Quantas calorias tem esse alimento? "))}
+  deseja_sair = bool(input("vc deseja sair [0 nao/1 sim]?"))
+  if deseja_sair: 
+    pass
+  else:
+    refeicao.update({"Alimento": input("Qual alimento voce comeu? "), "Calorias" : float(input("Quantas calorias tem esse alimento? "))})
+
+print(cardapio())
