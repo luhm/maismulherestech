@@ -99,28 +99,30 @@ Sair
 # historico alimentar = ver todas as keys
 
 def cardapio():
-  refeicao = {"Alimento": input("Qual alimento voce comeu? "), "Calorias" : float(input("Quantas calorias tem esse alimento? "))}
-  deseja_sair = bool(int(input("vc deseja sair [0 nao/1 sim]? ")))
-  while deseja_sair == False:
-    refeicao.update({"Alimento": input("Qual alimento voce comeu? "), "Calorias" : float(input("Quantas calorias tem esse alimento? "))})
-    deseja_sair = bool(input("vc deseja sair [0 nao/1 sim]?"))
+    historico = []
 
-print(cardapio())
+    while True:
+        alimento = input("Qual alimento você comeu? ")
+        calorias = float(input("Quantas calorias tem esse alimento? "))
+        
+        refeicao = {"Alimento": alimento, "Calorias": calorias}
+        historico.append(refeicao)
 
+        deseja_sair = input("Deseja adicionar outro alimento? [s/n]: ").strip().lower()
+        if deseja_sair == 'n':
+            break
+   
+    ver_historico = input("Deseja ver seu histórico de refeições? [s/n]: ").strip().lower()
+    if ver_historico == 's':
+        print("\nHistórico de Refeições:")
+        total_calorias = 0
+        for idx, item in enumerate(historico, 1):
+            print(f"{idx}. Alimento: {item['Alimento']}, Calorias: {item['Calorias']}")
+            total_calorias += item['Calorias']
+        
+        print(f"\nTotal de calorias consumidas: {total_calorias} kcal")
 
-
-def cardapio():
-  refeicao = {"Alimento": input("Qual alimento voce comeu? "), "Calorias": float(input("Quantas calorias tem esse alimento? "))}
-  deseja_sair = bool(int(input("vc deseja sair [0 nao/1 sim]? ")))
-  while deseja_sair == False:
-    refeicao["Alimento": input("Qual alimento voce comeu? ")] = "Calorias": float(input("Quantas calorias tem esse alimento? "))
-    deseja_sair = bool(int(input("vc deseja sair [0 nao/1 sim]? ")))
-  print(refeicao)
-  # ver_historico = bool(int(input("Deseja ver seu historico de refeicoes? [0 nao/1 sim]? ")))
-  # if ver_historico == True:
-  #   print(refeicao)
-  
-print(cardapio())
+cardapio()
 
 
 '''
